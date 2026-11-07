@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Paycheck Budget Planner — Google Sheets</title>
+<meta name="description" content="Free paycheck budget spreadsheet for Google Sheets. Give every paycheck a job, see which bills each check covers, and track what’s left.">
+<meta property="og:title" content="Free Paycheck Budget Planner for Google Sheets">
+<meta property="og:description" content="Give every paycheck a job. Dark-mode Google Sheets template with a paycheck dashboard. Free.">
+<meta property="og:image" content="https://shiftpace.github.io/img/card-paycheck.jpg">
+<meta name="theme-color" content="#0F172A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F172A;--card:#1A2338;--line:#26324D;--text:#E6EAF2;--muted:#94A3B8;--green:#34D399;--cyan:#22D3EE;--pink:#FB7185;--blue:#60A5FA;--yellow:#FBBF24;--violet:#A78BFA}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan)}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--text);text-decoration:none}
+nav a.back{color:var(--muted);text-decoration:none;font-size:15px}
+.hero{padding:56px 0 8px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+@media(max-width:800px){.hero{grid-template-columns:1fr}}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+h1{font-size:clamp(32px,5vw,48px);font-weight:800;letter-spacing:-.02em;line-height:1.12;margin-bottom:14px}
+h1 span{background:linear-gradient(90deg,var(--green),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:18px;margin-bottom:24px}
+.hero img{width:100%;height:auto;border-radius:18px;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;padding:15px 26px;border-radius:12px;background:var(--green);color:#06281C;text-decoration:none;box-shadow:0 8px 24px -8px rgba(52,211,153,.55);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;color:var(--muted);font-size:14px}
+.meta b{color:var(--text)}
+.spots{display:inline-flex;align-items:center;gap:8px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.35);color:var(--green);font-weight:700;font-size:14px;padding:6px 12px;border-radius:99px;margin-bottom:16px}
+.spots i{width:8px;height:8px;border-radius:50%;background:var(--green);display:block}
+h2{font-size:26px;font-weight:800;margin:56px 0 18px;letter-spacing:-.01em}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:800px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.num{width:38px;height:38px;border-radius:50%;border:3px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;margin-bottom:12px}
+.step h3{font-size:16px;margin-bottom:4px}
+.step p{color:var(--muted);font-size:14px}
+.film{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 22px}
+.film div{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.film div:last-child{border-bottom:0}
+.film b{color:var(--cyan);font-size:14px}
+.film span{color:#CBD5E1;font-size:15px}
+.note{margin-top:14px;color:var(--muted);font-size:14px}
+ul.rules{list-style:none;display:grid;gap:10px}
+ul.rules li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;color:#CBD5E1;font-size:15px}
+ul.rules li b{color:var(--text)}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none}
+summary::-webkit-details-marker{display:none}
+details p{color:var(--muted);padding:0 0 16px;font-size:15px}
+.cta{margin:56px 0 0;background:var(--card);border:1px solid rgba(52,211,153,.35);border-radius:22px;padding:40px 24px;text-align:center}
+.cta p{color:var(--muted);margin:8px 0 22px}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0;color:var(--muted);font-size:13px}
+</style>
+<style>
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:800px){.feat{grid-template-columns:1fr}}
+.feat div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;border-top:3px solid var(--c)}
+.feat h3{font-size:16px;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:14px}
+.up{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+@media(max-width:700px){.up{grid-template-columns:1fr}}
+.up p{color:var(--muted)}
+.btn2{display:inline-flex;font-weight:700;padding:13px 22px;border-radius:12px;border:1px solid var(--line);color:var(--text);text-decoration:none}
+.btn2:hover{border-color:var(--cyan)}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" fill="none" stroke="#26324D" stroke-width="5"/><circle cx="18" cy="18" r="14" fill="none" stroke="#34D399" stroke-width="5" stroke-linecap="round" stroke-dasharray="66 88" transform="rotate(-90 18 18)"/><circle cx="18" cy="18" r="6.5" fill="none" stroke="#22D3EE" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="28 41" transform="rotate(-90 18 18)"/></svg>ShiftPace</a>
+  <a class="back" href="index.html">← Back to planners</a>
+</div></nav>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <span class="eyebrow" style="color:var(--blue)">Free Google Sheets template</span>
+    <h1>The free <span>Paycheck Budget Planner</span></h1>
+    <p class="lead">Give every paycheck a job before you spend it. See which bills each check covers and exactly what’s left — in a calm, dark-mode Google Sheet.</p>
+    <a class="btn apply" href="#" target="_blank" rel="noopener">Send me the free planner</a>
+    <div class="meta"><span><b>$0</b> — no card needed</span><span>Works with a free Google account</span><span>Instant link</span></div>
+  </div>
+  <img src="img/card-paycheck.jpg" alt="Paycheck dashboard in Google Sheets" width="1200" height="800">
+</section>
+
+<h2>What’s inside</h2>
+<div class="feat">
+  <div style="--c:var(--blue)"><h3>Paycheck dashboard</h3><p>Every paycheck of the year, how much is assigned, and the dollars still waiting for a job.</p></div>
+  <div style="--c:var(--green)"><h3>Bills by paycheck</h3><p>Tag each bill with Pay #1, #2, #3 or Side and see exactly what every check covers.</p></div>
+  <div style="--c:var(--violet)"><h3>12 monthly tabs</h3><p>Paycheck plan, budget with paid checkboxes, and a transaction log for every month.</p></div>
+</div>
+
+<h2>How you get it</h2>
+<div class="steps">
+  <div class="step" style="--c:var(--green)"><div class="num">1</div><h3>Enter your email</h3><p>A short Google Form — 20 seconds.</p></div>
+  <div class="step" style="--c:var(--cyan)"><div class="num">2</div><h3>Get the link</h3><p>Your “Make a copy” link appears right away.</p></div>
+  <div class="step" style="--c:var(--violet)"><div class="num">3</div><h3>Make a copy</h3><p>It saves to your own Google Drive. Private to you.</p></div>
+  <div class="step" style="--c:var(--yellow)"><div class="num">4</div><h3>Set it up</h3><p>Follow our <a href="start.html">Getting Started guide</a>.</p></div>
+</div>
+<p class="note">We’ll only email you budgeting tips and new ShiftPace planners — no spam, unsubscribe anytime, and we never sell your email.</p>
+
+<h2>Want the full system?</h2>
+<div class="up">
+  <div><h3 style="font-size:20px;margin-bottom:6px">2027 Money Reset — $17</h3><p>Everything in the free planner plus a full debt payoff plan (snowball or avalanche), your debt-free date, savings goals and a yearly overview.</p></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn2" href="index.html#planners">See all planners</a></div>
+</div>
+
+<div class="cta">
+  <h2 style="margin:0">Start with your next paycheck</h2>
+  <p>Free. Takes 5 minutes to set up.</p>
+  <a class="btn apply" href="#" target="_blank" rel="noopener">Send me the free planner</a>
+</div>
+</main>
+
+<footer><div class="wrap">© 2026 ShiftPace Planners LLC · Questions: <a href="mailto:shiftpacellc@gmail.com">shiftpacellc@gmail.com</a> · Not financial advice. Google Sheets is a trademark of Google LLC; ShiftPace is not affiliated with Google.</div></footer>
+
+<script>
+// ▼ Paste your Google Form link here
+const FORM_URL = "https://forms.gle/REPLACE_ME";
+document.querySelectorAll(".apply").forEach(a => a.href = FORM_URL);
+</script>
+</body>
+</html>
