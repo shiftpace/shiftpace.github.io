@@ -158,6 +158,16 @@ details a{color:var(--cyan);text-decoration:underline}
 .review video,.review iframe{display:block;width:100%;aspect-ratio:9/16;border:0;background:#000}
 .review .cap{padding:14px 16px;font-size:14px;color:#CBD5E1}
 .review .disc{display:block;margin-top:6px;font-size:12px;color:var(--muted)}
+.rv-sum{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:22px;color:var(--muted)}
+.rv-sum b{font-size:28px;color:var(--text)}
+.stars{color:var(--yellow);letter-spacing:2px}
+.rv{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px}
+.rv p{color:#CBD5E1;font-size:15px;white-space:pre-line}
+.rv .who{font-size:14px;color:var(--muted);margin-top:auto}
+.rv .who b{color:var(--text)}
+.vb{display:inline-block;font-size:11px;font-weight:700;color:var(--green);background:rgba(52,211,153,.12);border-radius:99px;padding:2px 8px;margin-left:6px}
+.rv-leave{text-align:center;margin-top:22px;font-size:14px;color:var(--muted)}
+.rv-leave a{color:var(--cyan)}
 .tester-cta{max-width:720px;margin:40px auto 0;background:var(--card);border:1px dashed rgba(52,211,153,.5);border-radius:20px;padding:32px 24px;text-align:center}
 .tester-cta p{color:var(--muted);margin:8px 0 20px}
 .final{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:56px 24px;text-align:center}
@@ -345,7 +355,10 @@ footer{border-top:1px solid var(--line);padding:44px 0 36px;color:var(--muted);f
 <section id="reviews" style="padding-top:20px">
   <div class="wrap">
     <div class="center"><span class="eyebrow">Reviews</span><h2>Real people, honest opinions</h2>
-      <p class="lead">We’re new, so we don’t have reviews yet — and we won’t make any up. Our first testers’ honest videos will appear here.</p></div>
+      <p class="lead" id="rv-empty">We’re new, so we don’t have reviews yet — and we won’t make any up. Our first buyers’ and testers’ honest reviews will appear here.</p>
+      <div class="rv-sum" id="rv-sum" hidden><b id="rv-avg"></b><span class="stars" id="rv-stars"></span><span id="rv-count"></span></div></div>
+    <div class="reviews" id="rv-list" hidden></div>
+    <p class="rv-leave">Bought a planner? <a href="https://forms.gle/zaQWP1CWdz6su3kCA" target="_blank" rel="noopener">Leave an honest review</a> — we publish genuine reviews regardless of rating.</p>
 
     <!-- When a tester video arrives: copy this block inside .reviews and remove the tester-cta below once you have a few.
     <div class="reviews">
@@ -423,6 +436,29 @@ function hidePromo(){ document.getElementById("promo").remove(); try{ localStora
 (function(){ let closed=false; try{ closed = localStorage.getItem("promoClosed")==="1"; }catch(e){}
   if (closed || PROMO_SPOTS <= 0) { const el=document.getElementById("promo"); if(el) el.remove(); }
   else if (PROMO_SPOTS < 10) document.getElementById("promo-spots").textContent = PROMO_SPOTS + (PROMO_SPOTS===1?" spot left —":" spots left —"); })();
+
+// Reviews — loaded from the public ShiftPace reviews sheet
+const REVIEWS_SHEET = "1bpoqZ9G5KQ6xRovAcmwir5SOpXPcmCpqNJHtnoIXsQ4";
+function esc(t){ return String(t==null?"":t).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function starStr(n){ n=Math.round(n); return "★".repeat(n) + "☆".repeat(5-n); }
+window.spReviews = function(res){
+  try {
+    const rows = (res.table.rows||[]).map(r => (r.c||[]).map(c => c ? (c.f != null ? c.f : c.v) : ""))
+      .filter(r => r[1] && r[5] && Number(r[4]) >= 1);
+    if (!rows.length) return;
+    const list = document.getElementById("rv-list");
+    list.innerHTML = rows.slice(0, 12).map(r => `<article class="rv"><span class="stars">${starStr(Number(r[4]))}</span><p>${esc(r[5])}</p>
+      <div class="who"><b>${esc(r[1])}</b>${r[2] ? ", " + esc(r[2]) : ""}${r[6] === "yes" ? '<span class="vb">✓ Verified buyer</span>' : ""}<br>${esc(r[3])} · ${esc(r[0])}</div></article>`).join("");
+    const avg = rows.reduce((a, r) => a + Number(r[4]), 0) / rows.length;
+    document.getElementById("rv-avg").textContent = avg.toFixed(1);
+    document.getElementById("rv-stars").textContent = starStr(avg);
+    document.getElementById("rv-count").textContent = rows.length + (rows.length === 1 ? " review" : " reviews");
+    list.hidden = false; document.getElementById("rv-sum").hidden = false; document.getElementById("rv-empty").hidden = true;
+  } catch (e) {}
+};
+(function(){ const sc = document.createElement("script");
+  sc.src = "https://docs.google.com/spreadsheets/d/" + REVIEWS_SHEET + "/gviz/tq?tqx=responseHandler:spReviews&sheet=Reviews&headers=1&t=" + Date.now();
+  document.body.appendChild(sc); })();
 
 // Progress rings
 function ring(pct, color, size, stroke, label){
