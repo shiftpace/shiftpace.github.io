@@ -8,6 +8,7 @@
 <meta property="og:title" content="ShiftPace — Reset your money and your year in Google Sheets">
 <meta property="og:description" content="Dark-mode Google Sheets planners with live progress dashboards. One-time purchase, instant access.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://shiftpace.github.io/img/card-bundle.jpg">
 <meta name="theme-color" content="#0F172A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,6 +73,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .bar div{height:8px;border-radius:99px;background:#22304D;overflow:hidden}
 .bar div b{display:block;height:100%;border-radius:99px}
 .bar em{font-style:normal;text-align:right;color:var(--text);font-weight:600}
+.hero-img{width:100%;height:auto;border-radius:22px;display:block}
+.shot{display:block;width:calc(100% + 52px);max-width:none;margin:-26px -26px 18px;height:auto;border-radius:17px 17px 0 0;aspect-ratio:3/2;object-fit:cover}
+.bundle-img{width:100%;height:auto;border-radius:14px;margin-bottom:18px;display:block}
 .illus-note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
 
 /* problem/solution */
@@ -168,6 +172,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 36px;color:var(--muted);f
       <a href="#planners">Planners</a>
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
+      <a href="start.html">Getting started</a>
       <a class="btn btn-primary" href="https://buy.stripe.com/4gMaEX33q0CR0dx2BHgUM05">Get the Bundle</a>
     </div>
   </div>
@@ -186,22 +191,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 36px;color:var(--muted);f
       <div class="checks"><span>One-time payment</span><span>Instant access</span><span>Works with a free Google account</span></div>
     </div>
 
-    <div class="hero-visual" aria-label="Illustration of a ShiftPace dashboard with progress rings">
-      <div class="dash">
-        <div class="dash-top"><div class="dots"><i></i><i></i><i></i></div><div class="dash-title">Dashboard · 2027</div></div>
-        <div class="rings">
-          <div class="ringbox" data-ring="72" data-color="#34D399"><small>Savings goal</small></div>
-          <div class="ringbox" data-ring="45" data-color="#FB7185"><small>Debt paid</small></div>
-          <div class="ringbox" data-ring="86" data-color="#22D3EE"><small>Habits</small></div>
-        </div>
-        <div class="bars">
-          <div class="bar">Housing<div><b style="width:82%;background:var(--blue)"></b></div><em>82%</em></div>
-          <div class="bar">Groceries<div><b style="width:64%;background:var(--yellow)"></b></div><em>64%</em></div>
-          <div class="bar">Fun money<div><b style="width:38%;background:var(--violet)"></b></div><em>38%</em></div>
-          <div class="bar">Emergency<div><b style="width:55%;background:var(--green)"></b></div><em>55%</em></div>
-        </div>
-      </div>
-      <p class="illus-note">Illustration. Sample numbers only.</p>
+    <div class="hero-visual">
+      <img class="hero-img" src="img/card-money.jpg" alt="2027 Money Reset dashboard in Google Sheets" width="1200" height="800">
+      <p class="illus-note">Real dashboard from the 2027 Money Reset, shown with sample data.</p>
     </div>
   </div>
 </header>
@@ -246,37 +238,42 @@ footer{border-top:1px solid var(--line);padding:44px 0 36px;color:var(--muted);f
 
     <div class="grid">
       <article class="prod" style="--c:var(--green)">
+        <img class="shot" src="img/card-money.jpg" alt="ShiftPace money planner screenshot" loading="lazy" width="1200" height="800">
         <div class="prod-head"><span class="mini" data-ring="75" data-color="#34D399"></span><div><div class="tag">Flagship</div><h3>2027 Money Reset</h3></div></div>
-        <p>Your whole financial year on one dashboard — income, spending, savings and goals.</p>
-        <ul><li>Monthly budget tabs</li><li>Savings goal progress rings</li><li>Year-at-a-glance dashboard</li></ul>
+        <p>The all-in-one system: paycheck budgeting <em>plus</em> a full debt payoff plan, savings goals and yearly overview.</p>
+        <ul><li>12 monthly tabs: paycheck plan, budget, transactions</li><li>Built-in debt payoff plan</li><li>Dashboard with progress rings and charts</li></ul>
         <div class="prod-foot"><div class="price">$17</div><a class="buy" href="https://buy.stripe.com/fZu5kD6fCfxL5xRekpgUM00">Buy</a></div>
       </article>
 
       <article class="prod" style="--c:var(--pink)">
+        <img class="shot" src="img/card-debt.jpg" alt="ShiftPace debt planner screenshot" loading="lazy" width="1200" height="800">
         <div class="prod-head"><span class="mini" data-ring="40" data-color="#FB7185"></span><div><div class="tag">Get out of debt</div><h3>Debt Payoff Tracker</h3></div></div>
-        <p>List your debts, log every payment and watch the balance shrink.</p>
-        <ul><li>All debts in one view</li><li>Payment log</li><li>Payoff progress rings</li></ul>
+        <p>Pick snowball, avalanche or your own order and see exactly when you’ll be debt-free.</p>
+        <ul><li>Up to 25 debts with APR and minimums</li><li>Debt-free date and interest saved</li><li>Strategy comparison and progress ring</li></ul>
         <div class="prod-foot"><div class="price">$8</div><a class="buy" href="https://buy.stripe.com/8x23cvfQc5Xb6BV2BHgUM01">Buy</a></div>
       </article>
 
       <article class="prod" style="--c:var(--blue)">
+        <img class="shot" src="img/card-paycheck.jpg" alt="ShiftPace paycheck planner screenshot" loading="lazy" width="1200" height="800">
         <div class="prod-head"><span class="mini" data-ring="60" data-color="#60A5FA"></span><div><div class="tag">Paid weekly or biweekly</div><h3>Paycheck Budget Planner</h3></div></div>
-        <p>Give every paycheck a job before it hits your account.</p>
-        <ul><li>Plan by paycheck, not by month</li><li>Bills and spending categories</li><li>Leftover-to-spend at a glance</li></ul>
+        <p>The simple version: give every paycheck a job before you spend it. No debt tools, just your budget.</p>
+        <ul><li>Plan up to 3 paychecks a month</li><li>12 monthly budget and transaction tabs</li><li>Dashboard with progress rings and charts</li></ul>
         <div class="prod-foot"><div class="price">$8</div><a class="buy" href="https://buy.stripe.com/6oU7sL47ugBPd0jdglgUM02">Buy</a></div>
       </article>
 
       <article class="prod" style="--c:var(--yellow)">
+        <img class="shot" src="img/card-business.jpg" alt="ShiftPace business planner screenshot" loading="lazy" width="1200" height="800">
         <div class="prod-head"><span class="mini" data-ring="68" data-color="#FBBF24"></span><div><div class="tag">For side hustles & shops</div><h3>Small Business & Etsy Seller Tracker</h3></div></div>
-        <p>Track sales, expenses and profit for your small business or online shop.</p>
-        <ul><li>Sales and expense logs</li><li>Monthly profit overview</li><li>Business dashboard</li></ul>
+        <p>Track every sale across Etsy, Shopify, in person and more — fees and net profit calculate automatically.</p>
+        <ul><li>Business dashboard: revenue, profit, tax set-aside</li><li>Sales log with fees, product cost and net profit</li><li>Expense log, month-by-month and top products</li></ul>
         <div class="prod-foot"><div class="price">$17</div><a class="buy" href="https://buy.stripe.com/eVq7sL1ZmgBPgcvfotgUM03">Buy</a></div>
       </article>
 
       <article class="prod" style="--c:var(--violet)">
+        <img class="shot" src="img/card-habits.jpg" alt="ShiftPace habits planner screenshot" loading="lazy" width="1200" height="800">
         <div class="prod-head"><span class="mini" data-ring="82" data-color="#A78BFA"></span><div><div class="tag">Build the year you want</div><h3>2027 Habit & Goals Tracker</h3></div></div>
         <p>Turn big goals into daily habits and see your streaks fill up.</p>
-        <ul><li>Daily habit check-ins</li><li>Yearly and monthly goals</li><li>Habit progress rings</li></ul>
+        <ul><li>Daily check-ins with streaks</li><li>Yearly goals and milestones</li><li>Year-at-a-glance heatmap dashboard</li></ul>
         <div class="prod-foot"><div class="price">$10</div><a class="buy" href="https://buy.stripe.com/8x24gz33q85jd0j905gUM04">Buy</a></div>
       </article>
 
@@ -288,6 +285,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 36px;color:var(--muted);f
 
       <div class="bundle" id="bundle">
         <div>
+          <img class="bundle-img" src="img/card-bundle.jpg" alt="All five ShiftPace planners" loading="lazy" width="1200" height="800">
           <span class="badge">BEST VALUE</span>
           <h3>2027 Life Reset Bundle</h3>
           <p>All five ShiftPace planners — money, debt, paychecks, business and habits — in one purchase. Everything you need to start 2027 organized.</p>
@@ -329,7 +327,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 36px;color:var(--muted);f
       <details><summary>Do you see my data?</summary><p>No. When you make a copy, it lives in your own Google Drive. We can’t see or edit your copy.</p></details>
       <details><summary>Do I have to connect my bank account?</summary><p>No. You enter your own numbers. Nothing is linked to your bank.</p></details>
       <details><summary>Can I use it on my phone?</summary><p>Yes, with the Google Sheets app. For first-time setup and the best view of the dashboards, we recommend a computer.</p></details>
-      <details><summary>I lost my link. What do I do?</summary><p>Email us at <a class="email-link" href="#">our support address</a> with the email you used at checkout, and we’ll send it again.</p></details>
+      <details><summary>What’s the difference between Money Reset and Paycheck Budget Planner?</summary><p>Both use the same paycheck-based monthly budget. The 2027 Money Reset adds a full debt payoff plan (snowball, avalanche or custom) with your debt-free date. If you don’t have debt to pay off, the Paycheck Budget Planner is all you need. If you buy the Money Reset, you don’t need the Paycheck planner too.</p></details>
+      <details><summary>How do I get started after buying?</summary><p>Follow the <a href="start.html">Getting Started guide</a>. Every planner also has a START HERE tab inside.</p></details>
+      <details><summary>I lost my link. What do I do?</summary><p>Email us at <a class="email-link" href="mailto:shiftpacellc@gmail.com">shiftpacellc@gmail.com</a> with the email you used at checkout, and we’ll send it again.</p></details>
       <details><summary>What is your refund policy?</summary><p>Because you get instant access to a digital file, sales are generally final. But if a planner doesn’t work as described or you have a problem with your link, email us within 14 days of purchase and we’ll fix it or refund you.</p></details>
       <details><summary>Is this financial advice?</summary><p>No. ShiftPace planners are organizing tools. They don’t provide financial, tax or legal advice.</p></details>
       <details><summary>Who is behind ShiftPace?</summary><p>ShiftPace is a small independent brand run by ShiftPace Planners LLC. We design simple, good-looking planners we’d want to use ourselves.</p></details>
@@ -352,10 +352,10 @@ footer{border-top:1px solid var(--line);padding:44px 0 36px;color:var(--muted);f
     <div class="foot">
       <a href="#top" class="logo"><svg width="26" height="26"><use href="#logo"/></svg>ShiftPace</a>
       <div class="foot-links">
-        <a href="#planners">Planners</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a class="email-link" href="#">Contact</a>
+        <a href="#planners">Planners</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="start.html">Getting started</a><a class="email-link" href="mailto:shiftpacellc@gmail.com">Contact</a>
       </div>
     </div>
-    <p class="fine">© <span id="yr">2026</span> ShiftPace Planners LLC. All rights reserved. Digital products only — no physical items will be shipped. ShiftPace templates are for personal organization and are not financial, tax or legal advice. Payments are processed by Stripe. Google Sheets and Google Drive are trademarks of Google LLC; Etsy is a trademark of Etsy, Inc. ShiftPace is not affiliated with or endorsed by Google or Etsy.</p>
+    <p class="fine">© <span id="yr">2026</span> ShiftPace Planners LLC. All rights reserved. Digital products only — no physical items will be shipped. ShiftPace templates are for personal organization and are not financial, tax or legal advice. Contact: shiftpacellc@gmail.com. Payments are processed by Stripe. Google Sheets and Google Drive are trademarks of Google LLC; Etsy is a trademark of Etsy, Inc. ShiftPace is not affiliated with or endorsed by Google or Etsy.</p>
   </div>
 </footer>
 

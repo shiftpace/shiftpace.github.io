@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Started — ShiftPace</title>
+<meta name="description" content="How to copy and set up your ShiftPace Google Sheets planner in a few minutes.">
+<meta name="theme-color" content="#0F172A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F172A;--card:#1A2338;--line:#26324D;--text:#E6EAF2;--muted:#94A3B8;--green:#34D399;--cyan:#22D3EE;--pink:#FB7185;--blue:#60A5FA;--yellow:#FBBF24;--violet:#A78BFA}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan)}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--text);text-decoration:none}
+nav a.back{color:var(--muted);text-decoration:none;font-size:15px}
+header{padding:56px 0 24px}
+h1{font-size:clamp(32px,5vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+.lead{color:var(--muted);font-size:18px}
+h2{font-size:24px;font-weight:800;margin:44px 0 16px;letter-spacing:-.01em}
+.step{display:grid;grid-template-columns:44px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:12px}
+.num{width:44px;height:44px;border-radius:50%;border:3px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800}
+.step h3{font-size:17px;margin-bottom:4px}
+.step p,.step li{color:#CBD5E1;font-size:15px}
+.step ul{margin:6px 0 0 18px}
+details{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:14px;padding:4px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none}
+summary::-webkit-details-marker{display:none}
+details ol{margin:0 0 16px 20px;color:#CBD5E1;font-size:15px;display:grid;gap:6px}
+.tip{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.3);border-radius:14px;padding:16px 20px;color:#CBD5E1;font-size:15px;margin-top:12px}
+.tip b{color:var(--green)}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" fill="none" stroke="#26324D" stroke-width="5"/><circle cx="18" cy="18" r="14" fill="none" stroke="#34D399" stroke-width="5" stroke-linecap="round" stroke-dasharray="66 88" transform="rotate(-90 18 18)"/><circle cx="18" cy="18" r="6.5" fill="none" stroke="#22D3EE" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="28 41" transform="rotate(-90 18 18)"/></svg>ShiftPace</a>
+  <a class="back" href="index.html">← Back to planners</a>
+</div></nav>
+
+<main class="wrap">
+<header>
+  <h1>Getting started</h1>
+  <p class="lead">Thanks for your purchase! Here’s how to set up your planner in about 5 minutes.</p>
+</header>
+
+<h2>Set up any planner</h2>
+<div class="step" style="--c:var(--green)"><div class="num">1</div><div><h3>Open your PDF and click the planner link</h3><p>Use a computer for the first setup. Sign in to your Google account if asked (a free account works).</p></div></div>
+<div class="step" style="--c:var(--cyan)"><div class="num">2</div><div><h3>Click “Make a copy”</h3><p>Google saves your own private copy to your Google Drive. Rename it if you like. Only you can see it.</p></div></div>
+<div class="step" style="--c:var(--blue)"><div class="num">3</div><div><h3>Read the START HERE tab</h3><p>Every planner has a START HERE tab with a short walkthrough of that planner.</p></div></div>
+<div class="step" style="--c:var(--violet)"><div class="num">4</div><div><h3>Fill in SETUP once</h3><p>Enter your starting info in the highlighted cells on the SETUP tab. Every other tab reads from it.</p></div></div>
+<div class="step" style="--c:var(--yellow)"><div class="num">5</div><div><h3>Clear the sample data and start logging</h3><p>Planners come filled with sample numbers so you can see how they work. Delete them from the input cells, then add your own. The dashboard updates by itself.</p></div></div>
+
+<div class="tip"><b>Golden rule:</b> type only in the highlighted input cells. Don’t edit cells with formulas, the DASHBOARD, or any tab whose name starts with <b>CALC_</b> — those do the math for you. Made a mistake? Use <b>File → Version history</b> to go back.</div>
+
+<h2>Quick start by planner</h2>
+
+<details style="--c:var(--green)"><summary>2027 Money Reset</summary><ol>
+  <li><b>SETUP:</b> enter your paychecks, budget categories and savings goals once a year.</li>
+  <li><b>JAN–DEC:</b> plan each paycheck, then log what you spend in the transactions list.</li>
+  <li><b>DEBT PAYOFF:</b> list your debts to see your debt-free date.</li>
+  <li><b>DASHBOARD &amp; YEAR:</b> just look — they update on their own.</li>
+</ol></details>
+
+<details style="--c:var(--pink)"><summary>Debt Payoff Tracker</summary><ol>
+  <li><b>SETUP:</b> choose your strategy (snowball, avalanche or custom) and your extra monthly payment.</li>
+  <li>Add up to 25 debts with balance, interest rate (APR) and minimum payment.</li>
+  <li><b>DEBT PAYOFF:</b> see your debt-free date, interest saved and the order to attack each debt.</li>
+</ol></details>
+
+<details style="--c:var(--blue)"><summary>Paycheck Budget Planner</summary><ol>
+  <li><b>SETUP:</b> enter your paychecks and budget categories.</li>
+  <li><b>JAN–DEC:</b> assign every paycheck before you spend it, then log your transactions.</li>
+  <li><b>DASHBOARD &amp; YEAR:</b> track your progress rings and spending charts.</li>
+</ol></details>
+
+<details style="--c:var(--yellow)"><summary>Small Business &amp; Etsy Seller Tracker</summary><ol>
+  <li><b>SETUP:</b> add your products with list price and product cost.</li>
+  <li><b>SALES:</b> log each order — date, platform, product, quantity. Leave price blank to use the list price. Fees, cost and net profit calculate automatically.</li>
+  <li><b>EXPENSES:</b> log business costs and tick the tax-deductible box where it applies.</li>
+  <li><b>DASHBOARD:</b> see revenue, take-home profit, tax set-aside, best month, top platform and top products — it updates by itself.</li>
+</ol></details>
+
+<details style="--c:var(--violet)"><summary>2027 Habit &amp; Goals Tracker</summary><ol>
+  <li><b>SETUP:</b> add your habits and your word of the year.</li>
+  <li><b>GOALS:</b> set your yearly goals and milestones.</li>
+  <li><b>JAN–DEC:</b> tick a box each day you do a habit. Streaks and scores update automatically.</li>
+  <li><b>DASHBOARD:</b> watch your year-at-a-glance heatmap fill up.</li>
+</ol></details>
+
+<h2>Using your phone</h2>
+<p style="color:#CBD5E1">Install the free Google Sheets app and open your copy from Google Drive. Phones are great for quick logging; use a computer for setup and to see the full dashboard.</p>
+
+<h2>Need help?</h2>
+<p style="color:#CBD5E1">Email <a href="mailto:shiftpacellc@gmail.com">shiftpacellc@gmail.com</a> with the email you used at checkout. We usually reply within 1–2 business days.</p>
+</main>
+
+<footer><div class="wrap">© 2026 ShiftPace Planners LLC · Not financial, tax or legal advice. Google Sheets is a trademark of Google LLC; Etsy is a trademark of Etsy, Inc. ShiftPace is not affiliated with Google or Etsy.</div></footer>
+</body>
+</html>
