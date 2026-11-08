@@ -1,8 +1,8 @@
 /* ShiftPace analytics — GA4 + Microsoft Clarity + click events.
    Fill in the two IDs below. While an ID is empty, that tool stays off. */
 (function () {
-  var GA_ID = "";       // e.g. "G-XXXXXXXXXX"
-  var CLARITY_ID = "";  // e.g. "abc123xyz"
+  var GA_ID = "G-1THZW81MDE";       // e.g. "G-XXXXXXXXXX"
+  var CLARITY_ID = "zaahngdsjn";  // e.g. "abc123xyz"
 
   // Stripe Payment Link -> product name + price (USD)
   var PRODUCTS = {
